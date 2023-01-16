@@ -15,4 +15,4 @@ console.log(
       { name: "Product 3", price: 250 },
     ],
   })
-);
+);// should print the average price of all products

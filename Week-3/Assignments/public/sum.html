@@ -17,15 +17,15 @@
       event.preventDefault();
       numberURL = numberValue.value;
 
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        var number = JSON.parse(xhr.responseText);
-        document.getElementById('answer').innerHTML = `<p>Result: ${number}</p>`;
-      }
-    };
-    xhr.open('GET', `http://localhost:3000/data?number=${numberURL}`);
-    xhr.send();
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var number = JSON.parse(xhr.responseText);
+          document.getElementById('answer').innerHTML = `<p>Result: ${number}</p>`;
+        }
+      };
+      xhr.open('GET', `http://localhost:3000/data?number=${numberURL}`);
+      xhr.send();
     });
   </script>
 </body>

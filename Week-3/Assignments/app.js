@@ -16,7 +16,6 @@ app.get("/", (req, res) => {
 
 app.get("/data", (req, res) => {
   const { number } = req.query;
-
   if (number === undefined) {
     res.send("Lack of Parameter");
   } else if (isNaN(number)) {

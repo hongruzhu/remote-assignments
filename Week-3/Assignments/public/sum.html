@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <form id="form">
     <label>Please enter the number:</label> 
     <input type="number" name="number" id="number">
     <button type='submit' id="btn">Submit</button> 
-  </form>
 
   <div id="answer">
   </div>
@@ -13,8 +11,11 @@
   <script>
     const btn = document.getElementById('btn');
     const numberValue = document.getElementById('number');
-    btn.addEventListener('click', () => {}); // 監聽輸入數字後按下Submit的舉動，此時URL會出現query string(?number=x，x為任意數字)
-    let queryString=window.location.search; // 設一個變數抓取query string，並把這個變數拿到後面的xhr.open的URL用
+    
+    let numberURL;
+    btn.addEventListener("click", event => {
+      event.preventDefault();
+      numberURL = numberValue.value;
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -23,8 +24,9 @@
         document.getElementById('answer').innerHTML = `<p>Result: ${number}</p>`;
       }
     };
-    xhr.open('GET', `http://localhost:3000/data${queryString}`);
+    xhr.open('GET', `http://localhost:3000/data?number=${numberURL}`);
     xhr.send();
+    });
   </script>
 </body>
   

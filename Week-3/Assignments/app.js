@@ -1,10 +1,10 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 const app = express();
 
-app.use(express.urlencoded());
+// app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(express.static("public"));
 

@@ -27,7 +27,6 @@ app.get("/data", (req, res) => {
 
 app.get("/myName", (req, res) => {
   const name = req.cookies.username;
-  console.log(name);
   if (name) {
     res.render("name", { name });
   } else {
@@ -36,7 +35,6 @@ app.get("/myName", (req, res) => {
 });
 
 app.get("/trackName", (req, res) => {
-  console.log(req.query);
   res.cookie("username", req.query.username);
   res.redirect("/myName");
 });

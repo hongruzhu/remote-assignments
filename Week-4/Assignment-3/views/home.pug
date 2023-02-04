@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    title Assignment 3
+  body
+    h3(style=`display:${display}` id="signupMail") 此信箱已註冊，請更換信箱註冊～
+    h3(style=`display:${display}` id="signupPw") 此密碼已有人使用，請更換密碼註冊～
+    h2 請於下方註冊
+    form(action="/signup" method="post" id="signup")
+      label Email:
+        input(type="email" name="email" id="email" required)
+      label Password:
+        input(type="text" name="password" id="password" required)
+      button(type="submit" form="signup") Submit
+    br
+    h3(style=`display:${display}` id="signinMail") 輸入信箱錯誤！請重新輸入信箱
+    h3(style=`display:${display}` id="signinPw") 輸入密碼錯誤！請重新輸入密碼
+    h2 請於下方登入
+    form(action="/signin" method="post" id="signin")
+      label Email:
+        input(type="email" name="email" id="email")
+      label Password:
+        input(type="text" name="password" id="password")
+      button(type="submit" form="signin") Submit
+    script #{script}

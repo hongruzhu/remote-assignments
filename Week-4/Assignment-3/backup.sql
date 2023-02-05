@@ -36,7 +36,7 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'tset1@test.com','haha123','2023-02-04 07:09:09'),(2,'tset2@test.com','hehe123','2023-02-04 07:09:09'),(3,'test3@test.com','wawa123','2023-02-04 07:14:45');
+INSERT INTO `user` VALUES (1,'tset1@test.com','haha123','2023-02-05 08:37:12'),(2,'tset2@test.com','hehe123','2023-02-05 08:37:12'),(3,'tset3@test.com','wawa123','2023-02-05 08:37:12'),(4,'tset4@test.com','1234567','2023-02-05 08:37:12'),(5,'tset5@test.com','7654321','2023-02-05 08:37:12'),(6,'tset6@test.com','0000000','2023-02-05 08:37:12'),(7,'tset7@test.com','handsame123','2023-02-05 08:37:12'),(8,'tset8@test.com','beautiful123','2023-02-05 08:37:12'),(9,'tset9@test.com','haha123','2023-02-05 08:37:12'),(10,'tset10@test.com','hehe123','2023-02-05 08:37:12');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-04 15:50:16
+-- Dump completed on 2023-02-05 16:37:49

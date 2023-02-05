@@ -19,7 +19,7 @@ export async function createUser(email, password){
   `, [email, password]);
 }
 
-// 確認table有該筆信箱
+// 確認table有該筆信箱，回傳true代表沒有
 export async function checkEmail(email) {
   const [check] = await pool.query(`
   SELECT email 
@@ -28,21 +28,21 @@ export async function checkEmail(email) {
   `, [email]);
   if (check.length === 0) {
     return true;
-  } else if (check[0].email === email){
+  } else {
     return false;
   }
 }
 
-// 確認table有該筆密碼
-export async function checkPassword(password) {
+// 確認該筆信箱的密碼正確，回傳true代表正確
+export async function checkPassword(email, password) {
   const [check] = await pool.query(`
   SELECT password 
   FROM user
-  WHERE password = ?
-  `,[password]);
-  if (check.length === 0) {
+  WHERE email = ?
+  `,[email]);
+  if (check[0].password === password) {
     return true;
-  } else if (check[0].password === password) {
+  } else {
     return false;
   }
 }

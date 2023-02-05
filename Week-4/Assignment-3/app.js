@@ -19,29 +19,23 @@ app.get("/", async (req, res) => {
 app.post("/signup", async (req, res) => {
   const { email, password } = req.body;
   const display = "none";
-  if (await checkEmail(email) && await checkPassword(password)) {
+  if (await checkEmail(email)) {
     await createUser(email, password);
     res.render("member");
-  } else if ((await checkEmail(email)) === false) {
+  } else {
     const script = `
       const display = document.getElementById('signupMail');
       display.setAttribute('style', 'color:red;display:inline');
     `;  
     res.render("home", {display, script});
-  } else {
-    const script = `
-      const display = document.getElementById('signupPw');
-      display.setAttribute('style', 'color:red;display:inline');
-    `;
-    res.render("home", { display, script });
-  }
+  } 
 });
 
 // 登入路徑處理
 app.post("/signin", async (req, res) => {
   const { email, password } = req.body;
   const display = "none";
-  if ((await checkEmail(email)) === false && (await checkPassword(password)) === false) {
+  if ((await checkEmail(email)) === false && (await checkPassword(email, password))) {
     res.render("member");
   } else if ((await checkEmail(email))) {
     const script = `

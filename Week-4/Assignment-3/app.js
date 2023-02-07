@@ -1,6 +1,5 @@
 import express from "express";
 import {createUser, checkEmail, checkPassword } from "./database.js";
-import bodyParser from "body-parser";
 
 const app = express();
 
